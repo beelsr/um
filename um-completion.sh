@@ -1,5 +1,5 @@
 # Defines a shell function used to provide tab completion for um
-_um()
+_um_complete()
 {
     local current previous subs user topic_path topic pages_directory
 
@@ -53,4 +53,4 @@ _um()
     return 0
 }
     
-complete -F _um um
+complete -F _um_complete um
