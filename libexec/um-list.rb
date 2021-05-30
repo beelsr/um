@@ -25,7 +25,7 @@ unless Dir.exist? topic_directory
 end
 
 if $stdout.isatty
-  exec(%{ls "#{topic_directory}" | sed 's/\.[[:alnum:]]*$//' | column})
+  exec(%{ls -1 --ignore-backups "#{topic_directory}" | sed 's/\.[[:alnum:]]*$//' })
 else
-  exec(%{ls "#{topic_directory}" | sed 's/\.[[:alnum:]]*$//' })
+  exec(%{ls -1 --ignore-backups "#{topic_directory}" | sed 's/\.[[:alnum:]]*$//' })
 end
