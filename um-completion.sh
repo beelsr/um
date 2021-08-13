@@ -32,7 +32,7 @@ _um_complete()
             return 0
             ;;
         read|edit|rm)
-            local pages=$(ls "${pages_directory}/${topic}" | sed 's/\..*$//')
+            local pages=$(command ls "${pages_directory}/${topic}" | sed 's/\..*$//')
             COMPREPLY=($(compgen -W "${pages}" -- ${current}))
             return 0
             ;;
@@ -48,7 +48,7 @@ _um_complete()
             ;;
     esac
 
-    local pages=$(ls "${pages_directory}/${topic}" | sed 's/\..*$//')
+    local pages=$(command ls "${pages_directory}/${topic}" | sed 's/\..*$//')
     COMPREPLY=($(compgen -W "${subs} ${pages}" -- ${current}))
     return 0
 }
